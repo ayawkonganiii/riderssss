@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rider Dashboard | HabalGo</title><link rel="icon" href="assets/HabalGo_Rider_Registration_Logo.png">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="top"><div class="wrap bar"><span class="logo-badge"><img src="assets/HabalGo_Rider_Registration_Logo.png" alt="HabalGo" onerror="this.replaceWith('HabalGo')"></span><b id="who"></b><span class="badge" id="role"></span><button class="btn sm alt" onclick="logout()">Logout</button></div></header><main class="wrap" style="padding-top:20px"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<section><div class="card glow"><h2>Status</h2><label style="display:flex;gap:12px;align-items:center;margin:0"><input type="checkbox" class="sw" id="online" role="switch"> <span id="onlbl">Offline</span></label><p id="ver" style="margin-top:10px"></p></div>
+<div class="card"><h2>Incoming requests</h2><div id="reqs"></div></div>
+<div class="card"><h2>Current trip</h2><div id="trip"></div></div></section>
+<section><div class="card"><h2>Earnings</h2><div class="grid"><div><small>Today</small><div class="big" id="today"></div></div><div><small>This week</small><div class="big" id="week"></div></div></div></div>
+<div class="card"><h2>Profile</h2><div id="prof"></div></div>
+<div class="card"><h2>Trip history</h2><div class="tbl"><table id="hist"></table></div></div></section></div></main>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/rider.js"></script></body></html>

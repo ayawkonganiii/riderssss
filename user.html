@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passenger Dashboard | HabalGo</title><link rel="icon" href="assets/HabalGo_Rider_Registration_Logo.png"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="top"><div class="wrap bar"><span class="logo-badge"><img src="assets/HabalGo_Rider_Registration_Logo.png" alt="HabalGo" onerror="this.replaceWith('HabalGo')"></span><b id="who"></b><span class="badge" id="role"></span><button class="btn sm alt" onclick="logout()">Logout</button></div></header><main class="wrap" style="padding-top:20px"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<section><form class="card glow" id="book" novalidate><h2>Book a ride</h2><div id="map" role="region" aria-label="Map: tap to set pickup, then drop-off"></div>
+<label for="pickup">Pickup location</label><input id="pickup" autocomplete="off"><label for="drop">Drop-off location</label><input id="drop" autocomplete="off">
+<p style="margin:12px 0">Estimate: <b id="est">—</b> <small>(₱40 base + ₱12/km)</small></p><div class="err" id="bk-err" role="alert"></div><button class="btn block" type="submit">Request Ride</button></form>
+<div class="card"><h2>Nearby riders</h2><div id="nearby"></div></div></section>
+<section><div class="card"><h2>Ride status</h2><div class="track" id="track"></div><div id="ride" style="margin-top:14px"></div></div>
+<div class="card"><h2>Ride history</h2><div class="tbl"><table id="hist"></table></div></div></section></div></main>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/user.js"></script></body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard | HabalGo</title><link rel="icon" href="assets/HabalGo_Rider_Registration_Logo.png">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="top"><div class="wrap bar"><span class="logo-badge"><img src="assets/HabalGo_Rider_Registration_Logo.png" alt="HabalGo" onerror="this.replaceWith('HabalGo')"></span><b id="who"></b><span class="badge" id="role"></span><button class="btn sm alt" onclick="logout()">Logout</button></div></header><main class="wrap" style="padding-top:20px">
+<section class="grid" id="stats" aria-label="Overview"></section>
+<section class="card"><h2>Rider management</h2><div class="row"><input id="q" placeholder="Search riders" aria-label="Search riders"><select id="f" aria-label="Filter status"><option value="">All statuses</option><option>pending</option><option>approved</option><option>rejected</option><option>suspended</option></select></div><div class="tbl"><table id="riders"></table></div></section>
+<section class="card"><h2>Users</h2><div class="tbl"><table id="users"></table></div></section>
+<section class="card"><h2>Ride history</h2><div class="tbl"><table id="rides"></table></div></section></main>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/admin.js"></script></body></html>

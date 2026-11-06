@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign Up | HabalGo</title><link rel="icon" href="assets/HabalGo_Rider_Registration_Logo.png">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<main class="auth"><div class="logo"><span class="logo-badge big"><img src="assets/HabalGo_Rider_Registration_Logo.png" alt="HabalGo" onerror="this.replaceWith('HabalGo')"></span></div>
+<form class="card glow" id="regForm" novalidate aria-labelledby="t"><h2 id="t">Create your account</h2>
+<label for="role">I am a</label><select id="role" name="role"><option value="user">User (Passenger)</option><option value="rider">Rider</option></select>
+<label for="name">Full name</label><input id="name" name="name" autocomplete="name"><div class="err" id="e-name" role="alert"></div>
+<label for="email">Email</label><input id="email" name="email" type="email"><div class="err" id="e-email" role="alert"></div>
+<label for="phone">Contact number</label><input id="phone" name="phone" type="tel" placeholder="09XXXXXXXXX"><div class="err" id="e-phone" role="alert"></div>
+<label for="password">Password (min. 8 characters)</label><input id="password" name="password" type="password" autocomplete="new-password"><div class="err" id="e-password" role="alert"></div>
+<label for="confirm">Confirm password</label><input id="confirm" name="confirm" type="password" autocomplete="new-password"><div class="err" id="e-confirm" role="alert"></div>
+<div id="riderFields" class="hide"><h3 style="margin-top:14px">Rider details</h3>
+<label for="address">Address / Barangay</label><input id="address" name="address"><div class="err" id="e-address" role="alert"></div>
+<label for="bike">Motorcycle model</label><input id="bike" name="bike"><div class="err" id="e-bike" role="alert"></div>
+<label for="plate">Plate number</label><input id="plate" name="plate"><div class="err" id="e-plate" role="alert"></div>
+<label for="license">Driver's license number</label><input id="license" name="license"><div class="err" id="e-license" role="alert"></div>
+<label for="licensePhoto">License photo (preview only)</label><input id="licensePhoto" name="licensePhoto" type="file" accept="image/*"><img id="pv-licensePhoto" class="preview hide" alt="License preview">
+<label for="bikePhoto">Motorcycle photo (preview only)</label><input id="bikePhoto" name="bikePhoto" type="file" accept="image/*"><img id="pv-bikePhoto" class="preview hide" alt="Motorcycle preview">
+<p><small>Rider accounts stay <b>Pending</b> until approved by an admin.</small></p></div>
+<button class="btn block" style="margin-top:16px" type="submit">Sign Up</button><p style="margin-top:14px">Have an account? <a href="login.html">Log In</a></p></form></main>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/auth.js"></script></body></html>

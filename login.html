@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login | HabalGo</title><link rel="icon" href="assets/HabalGo_Rider_Registration_Logo.png">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<main class="auth"><div class="logo"><span class="logo-badge big"><img src="assets/HabalGo_Rider_Registration_Logo.png" alt="HabalGo" onerror="this.replaceWith('HabalGo')"></span></div>
+<form class="card glow" id="loginForm" novalidate aria-labelledby="t"><h2 id="t">Welcome back</h2>
+<div class="tabs" role="tablist" aria-label="Role"><button type="button" role="tab" data-role="user" class="on" aria-selected="true">User</button><button type="button" role="tab" data-role="rider" aria-selected="false">Rider</button><button type="button" role="tab" data-role="admin" aria-selected="false">Admin</button></div>
+<label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="e-email" role="alert"></div>
+<label for="password">Password</label><div class="pw"><input id="password" name="password" type="password" autocomplete="current-password" required><button type="button" id="toggle" aria-label="Show or hide password">👁</button></div><div class="err" id="e-password" role="alert"></div>
+<label for="phone">Contact number</label><input id="phone" name="phone" type="tel" placeholder="09XXXXXXXXX or +639XXXXXXXXX" required><div class="err" id="e-phone" role="alert"></div>
+<div class="row"><label><input type="checkbox" name="remember"> Remember me</label><a href="#" id="forgot">Forgot password?</a></div>
+<div class="err" id="formerr" role="alert"></div><button class="btn block" type="submit">Log In</button>
+<p style="margin-top:14px">No account? <a href="register.html">Sign Up</a> · <a href="index.html">Home</a></p></form></main>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/auth.js"></script></body></html>

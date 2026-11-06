@@ -1,0 +1,9 @@
+const me=guard('admin');
+function setStatus(id,s){DB.set('users',DB.get('users').map(u=>u.id===id?{...u,status:s,online:s==='approved'?u.online:false}:u));render()}
+function render(){const U=DB.get('users'),R=DB.get('rides'),riders=U.filter(u=>u.role==='rider'),pax=U.filter(u=>u.role==='user');
+ $('#stats').innerHTML=[['Total users',pax.length],['Total riders',riders.length],['Pending riders',riders.filter(r=>r.status==='pending').length],['Total rides',R.length]].map(([a,b])=>`<div class="card glow"><small>${a}</small><div class="big">${b}</div></div>`).join('');
+ const q=$('#q').value.toLowerCase(),f=$('#f').value,A=[['approved','Approve'],['rejected','Reject'],['suspended','Suspend']];
+ $('#riders').innerHTML='<tr><th>Rider</th><th>Motorcycle</th><th>Status</th><th>Actions</th></tr>'+riders.filter(r=>(!f||r.status===f)&&(r.name+r.email+r.plate).toLowerCase().includes(q)).map(r=>`<tr><td>${esc(r.name)}<br><small>${esc(r.email)}</small></td><td>${esc(r.bike)} · ${esc(r.plate)}</td><td><span class="badge">${r.status}</span></td><td>${A.map(([s,l])=>`<button class="btn sm ${s==='approved'?'':'alt'}" onclick="setStatus('${r.id}','${s}')">${l}</button>`).join(' ')}</td></tr>`).join('');
+ $('#users').innerHTML='<tr><th>Name</th><th>Email</th><th>Contact</th></tr>'+pax.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(u.phone)}</td></tr>`).join('');
+ $('#rides').innerHTML='<tr><th>Date</th><th>Passenger</th><th>Rider</th><th>Route</th><th>Fare</th><th>Status</th></tr>'+(R.length?[...R].reverse().map(r=>`<tr><td>${new Date(r.t).toLocaleString()}</td><td>${esc(r.userName)}</td><td>${esc(r.riderName||'—')}</td><td>${esc(r.pickup)} → ${esc(r.drop)}</td><td>₱${r.fare}</td><td><span class="badge">${r.status}</span></td></tr>`).join(''):'<tr><td colspan="6">No rides yet.</td></tr>')}
+$('#q').oninput=$('#f').onchange=render;render();setInterval(render,3000);
